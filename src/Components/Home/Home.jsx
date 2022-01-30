@@ -46,7 +46,8 @@ function Home() {
   };
   return (
     <div className="Home">
-      <Navbar />I am home page
+      <Navbar />
+      I am home page
       {user.map((value) => displayData(value))}
     </div>
   );

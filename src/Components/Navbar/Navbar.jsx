@@ -28,6 +28,15 @@ function Navbar() {
             navigate("/login")
         }
     }
+
+    const Posts = () => {
+        const authUser = localStorage.getItem("username")
+        if(authUser){
+            navigate(`/post/${authUser}`)
+        }else{
+            navigate("/login")
+        }
+    }
   return <div>
       <div className="container-fluid">
           <div className="row">
@@ -38,6 +47,7 @@ function Navbar() {
                   <button onClick={signInRoute}>Signin</button>
                   <button onClick={logInRoute}>Login</button>
                   <button onClick={homeRoute}>Home</button>
+                  <button onClick={Posts}>Posts</button>
                   <button onClick={profileRoute}>Profile</button>
                   <button onClick={logout}>Logout</button>
               </div>
