@@ -1,0 +1,16 @@
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+.login-background{
+    background:linear-gradient(to right,rgb(149, 0, 255),rgb(4, 0, 255)) ;
+    /* margin: 80px 30px 0px 30px ; */
+    padding: 200px 30px 200px 30px ;
+}
+.login-heading{
+    color: white;
+   
+    font-size: 50px;
+}
+.login-sub-heading{
+    color: rgb(174, 174, 174);
+}

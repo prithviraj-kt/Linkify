@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
+import './signin.css';
+import man from './man.jpeg';
+import { Formik } from 'formik';
 import { useParams, useNavigate } from "react-router-dom";
+
 function Signin() {
   const [user, setUser] = useState("");
   //   const [existUser, setExistUser] = useState("");
@@ -64,74 +68,96 @@ function Signin() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   return (
-    <div>
-      <div>
-        <Navbar />
+    <div className="signin-first-border">
+      <div className="signin-border">
+          {/* <Navbar /> */}
         <div className="container">
-          {/* <h1>hello</h1> */}
-          <h1>Create {user.username}</h1>
-          <input
-            onChange={(e) => changeInput(e)}
-            name="username"
-            placeholder="User name"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="name"
-            placeholder="name"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="email"
-            placeholder="email"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="position"
-            placeholder="position"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="phone"
-            placeholder="phone number"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="college"
-            placeholder="College"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            type="password"
-            name="password"
-            placeholder="password"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            type="password"
-            name="confirm_password"
-            placeholder="confirm Password"
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <button onClick={(e) => handleClick(e)}>Submit</button>
+           <div className="row">
+            <div className="col-md-4">
+              <div className="signin-image"><img src={man}/></div >
+            </div>
+            <div className="col-md-6">
+              <div className="signin-container">
+            <div className="column">
+
+              
+            </div>
+      
+            {/* <h1 >Create {user.username}</h1> */}
+            <input
+              onChange={(e) => changeInput(e)}
+              name="username"
+              placeholder="First name"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <input 
+              onChange={(e) => changeInput(e)}
+              name="name"
+              placeholder="Last Name"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <input
+              onChange={(e) => changeInput(e)}
+              name="email"
+              placeholder="Email id"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <input
+              onChange={(e) => changeInput(e)}
+              name="position"
+              placeholder="Position STUDENT/ALUMINI"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <input
+              onChange={(e) => changeInput(e)}
+              name="phone"
+              placeholder="Phone Number"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <input
+              onChange={(e) => changeInput(e)}
+              name="college"
+              placeholder="College"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <input
+              onChange={(e) => changeInput(e)}
+              type="password"
+              name="password"
+              placeholder="Password"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <input
+              onChange={(e) => changeInput(e)}
+              type="password"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              id="my-input"
+              aria-describedby="my-helper-text"
+            />
+            <button className="signin-submit-button"  onClick={(e) => handleClick(e)}>Submit</button>
+          </div>
+         
         </div>
+
       </div>
+    
     </div>
+
+    </div>
+    </div>
+
+
+  
+    
+   
   );
 }
 

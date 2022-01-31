@@ -1,5 +1,6 @@
 import React from "react";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import logo from './logo.png'
 function Navbar() {
     const navigate = useNavigate()
     const logout = () => {
@@ -31,8 +32,8 @@ function Navbar() {
   return <div>
       <div className="container-fluid">
           <div className="row">
-              <div className="col-4">
-                  Logo
+              <div className="col-4 logo">
+                  <img src= {logo} />
               </div>
               <div className="col-8">
                   <button onClick={signInRoute}>Signin</button>

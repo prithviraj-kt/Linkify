@@ -29,17 +29,27 @@ function Login() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   return (
-    <div className="Login">
-      <Navbar />
+    <div className="login-background">
+       <div className="Login">
+      {/* <Navbar /> */}
+
       <div className="container">
-          <h1>Login</h1>
-        <input
+        <div className="login-heading">
+          <center>Login</center>
+        </div>
+        <div className="login-sub-heading">
+          <center>Please enter your login and password</center>
+        </div>
+      
+        <center><input
           name="username"
           onChange={(e) => {
             handleChange(e);
           }}
           type="text"
-        />
+        /></center>
+        <div>
+        <center >
         <input
           name="password"
           onChange={(e) => {
@@ -47,6 +57,9 @@ function Login() {
           }}
           type="text"
         />
+
+        </center>
+        
         <button
           onClick={() => {
             loginUser();
@@ -54,8 +67,19 @@ function Login() {
         >
           Submit
         </button>
+
+        </div>
+
+
+       
+          
+
+       
       </div>
     </div>
+
+    </div>
+   
   );
 }
 
