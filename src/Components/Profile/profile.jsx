@@ -9,6 +9,7 @@ function Profile() {
   const {visitedUser} = useParams()
   const [user, setUser] = useState("");
   const navigate = useNavigate();
+  const [post, setPost] = useState([])
   useEffect(() => {
     getUserData();
   }, []);
@@ -18,15 +19,21 @@ function Profile() {
       `http://localhost:5000/getUser/${visitedUser}`
     );
     setUser(userData.data);
-    // const authUser = await localStorage.getItem("username");
-    // if(userData.data.username!=authUser){
-    //         navigate("/login")
-    // }
+    const post = await axios.get(`http://localhost:5000/get/${visitedUser}`)
+    setPost(post.data)
+    console.log(post.data)
   }
 
   const handleClick = () => {
     navigate(`/edit/${username}`);
   };
+
+  const displayPost =(e) =>{
+    return <div className="postPostDisplay">
+    <p>{e.title}</p>
+    <p>{e.description}</p>
+  </div>
+  }
   return (
     <div className="Profile">
       <Navbar />
@@ -40,6 +47,12 @@ function Profile() {
           <p>{user.college}</p>
           {visitedUser==username? <button onClick={() => handleClick()}>Edit</button>: ""}
           
+        </div>
+        <div className="row">
+          <h1>Your posts...</h1>
+        </div>
+        <div className="row postPost">
+          {post.map((e) => displayPost(e))}
         </div>
       </div>
     </div>
