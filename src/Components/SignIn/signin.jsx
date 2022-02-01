@@ -70,7 +70,7 @@ function Signin() {
   return (
     <div className="signin-first-border">
       <div className="signin-border">
-          {/* <Navbar /> */}
+          <Navbar />
         <div className="container">
            <div className="row">
             <div className="col-md-4">

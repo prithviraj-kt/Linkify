@@ -33,14 +33,14 @@ function Navbar() {
       <div className="container-fluid">
           <div className="row">
               <div className="col-4 logo">
-                  <img src= {logo} />
+                  <img src= {logo} className="navbar-logo"/>
               </div>
               <div className="col-8">
                   <button onClick={signInRoute}>Signin</button>
                   <button onClick={logInRoute}>Login</button>
                   <button onClick={homeRoute}>Home</button>
                   <button onClick={profileRoute}>Profile</button>
-                  <button onClick={logout}>Logout</button>
+                  
               </div>
           </div>
       </div>

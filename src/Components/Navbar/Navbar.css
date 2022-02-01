@@ -1,3 +1,10 @@
-.logo{
+.navbar-logo{
     height: 40px;
+    width: 40px;
+}
+.navbar{
+    color: rgb(0, 97, 182);
+}
+.navbar-signin{
+    background-color: aquamarine;
 }
