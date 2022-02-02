@@ -5,7 +5,6 @@ import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import Profile from "./Components/Profile/Profile";
 import NotFound from "./Components/NotFound/NotFound";
-// import Navbar from "./Components/Navbar/Navbar";
 import Edit from "./Components/EditUser/EditUser"
 function App() {
   return (
