@@ -3,6 +3,7 @@ import "./home.css";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar/Navbar";
+
 function Home() {
   const navigate = useNavigate();
   const { username } = useParams();
@@ -46,7 +47,28 @@ function Home() {
   };
   return (
     <div className="Home">
-      <Navbar />I am home page
+      <Navbar />
+
+      <div className="container">
+      <div className="row">
+        <div className="col-md-5">
+          <div className="home-student-list">student
+
+          </div>
+        </div>
+        <div className="col-md-5">
+          <div className="home-alumini-list">Alumini
+
+          </div>
+          
+          
+        </div>
+
+      </div>
+
+      </div>
+      
+
       {user.map((value) => displayData(value))}
     </div>
   );

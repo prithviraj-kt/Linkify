@@ -30,7 +30,7 @@ function Login() {
   };
   return (
     <div className="login-background">
-       <div className="Login">
+      <div className="Login">
       {/* <Navbar /> */}
 
       <div className="container">
@@ -40,43 +40,39 @@ function Login() {
         <div className="login-sub-heading">
           <center>Please enter your login and password</center>
         </div>
+        <div className="login-login-id">
+          <center>
+            <input
+            name="username"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+            type="text"
+            placeholder="Enter Login id"/>
+          </center>
+        </div>
       
-        <center><input
-          name="username"
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          type="text"
-        /></center>
-        <div>
-        <center >
-        <input
-          name="password"
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          type="text"
-        />
-
-        </center>
-        
-        <button
+        <div className="login-login-pwd">
+          <center >
+            <input
+              name="password"
+              onChange={(e) => {
+                handleChange(e);
+              }}
+              placeholder="Enter Password"
+              type="text"
+            />
+          </center>
+        </div>     
+        <button className="login-btn"
           onClick={() => {
             loginUser();
-          }}
-        >
-          Submit
+          }}>
+            Submit
         </button>
-
-        </div>
-
-
-       
-          
-
        
       </div>
-    </div>
+      </div>
 
     </div>
    

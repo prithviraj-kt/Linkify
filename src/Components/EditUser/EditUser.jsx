@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
+import "./EditUser.css";
 import { useParams, useNavigate } from "react-router-dom";
 function EditUser() {
   const { username } = useParams();
@@ -61,7 +62,7 @@ function EditUser() {
           <input
             onChange={(e) => changeInput(e)}
             name="name"
-            placeholder="name"
+            placeholder="Name"
             value={user.name}
             id="my-input"
             aria-describedby="my-helper-text"
@@ -69,7 +70,7 @@ function EditUser() {
           <input
             onChange={(e) => changeInput(e)}
             name="email"
-            placeholder="email"
+            placeholder="Email"
             value={user.email}
             id="my-input"
             aria-describedby="my-helper-text"
@@ -77,7 +78,7 @@ function EditUser() {
           <input
             onChange={(e) => changeInput(e)}
             name="phone"
-            placeholder="phone"
+            placeholder="Phone"
             value={user.phone}
             id="my-input"
             aria-describedby="my-helper-text"
@@ -85,20 +86,21 @@ function EditUser() {
           <input
             onChange={(e) => changeInput(e)}
             name="password"
-            placeholder="password"
+            placeholder="Password"
             value={user.password}
             id="my-input"
             aria-describedby="my-helper-text"
           />
           <input
+            className="edit"
             onChange={(e) => changeInput(e)}
             name="confirm_password"
-            placeholder="confirm password"
+            placeholder="Confirm password"
             value={user.confirm_password}
             id="my-input"
             aria-describedby="my-helper-text"
           />
-          <button onClick={(e) => handleClick(e)}>Submit</button>
+          <button className="edit-user-submit-btn" onClick={(e) => handleClick(e)}>Submit</button>
         </div>
       </div>
     </div>
