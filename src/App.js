@@ -1,11 +1,13 @@
 import React from "react";
 import { BrowserRouter , Route, Routes } from "react-router-dom";
-import Signin from "./Components/SignIn/signin.jsx";
-import Login from "./Components/Login/login.jsx";
+import Signin from "./Components/SignIn/Signin";
+import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
-import Profile from "./Components/Profile/profile.jsx";
+import Profile from "./Components/Profile/Profile";
 import NotFound from "./Components/NotFound/NotFound";
+
 import Post from "./Components/Post/Post";
+
 import Edit from "./Components/EditUser/EditUser"
 import AddPost from "./Components/AddPost/Post"
 function App() {
