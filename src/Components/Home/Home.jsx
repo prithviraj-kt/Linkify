@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./home.css";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-// import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Navbar";
 
 function Home() {
   const navigate = useNavigate();
@@ -47,17 +47,17 @@ function Home() {
   };
   return (
     <div className="Home">
-      {/* <Navbar /> */}
+      <Navbar />
 
       <div className="container">
       <div className="row">
         <div className="col-md-5">
-          <div className="home-student-list">s
+          <div className="home-student-list">student
 
           </div>
         </div>
         <div className="col-md-5">
-          <div className="home-alumini-list">a
+          <div className="home-alumini-list">Alumini
 
           </div>
           

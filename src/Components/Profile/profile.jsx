@@ -29,16 +29,17 @@ function Profile() {
   };
   return (
     <div className="Profile">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
         <div className="row">
-          <h1>Welcome @{user.username}</h1>
+          <h1>Welcome {user.username}</h1>
           <p>{user.name}</p>
           <p>{user.email}</p>
           <p>{user.phone}</p>
           <p>{user.position}</p>
           <p>{user.college}</p>
-          {visitedUser==username? <button onClick={() => handleClick()}>Edit</button>: ""}
+          {visitedUser==username? 
+          <button className="btn btn-primary" onClick={() => handleClick()}>Edit</button>: ""}
           
         </div>
       </div>

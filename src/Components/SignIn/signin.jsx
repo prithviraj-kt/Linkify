@@ -8,23 +8,9 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function Signin() {
   const [user, setUser] = useState("");
-  //   const [existUser, setExistUser] = useState("");
+ 
   const navigate = useNavigate();
-  //   useEffect(() => {
-  //     getUserData();
-  //   }, [existUser]);
 
-  //   async function getUserData() {
-  //     const userData = await axios
-  //       .get(`http://localhost:5000/getUser/${user.username}`)
-  //       .then((value) => {
-  //         setExistUser(value.data);
-  //         console.log(value.data)
-  //       })
-  //       .catch((err) => {
-  //         console.log("Checking the user");
-  //       });
-  //   }
   const handleClick = async () => {
     try {
       if (
@@ -72,92 +58,77 @@ function Signin() {
       <div className="signin-border">
           <Navbar />
         <div className="container">
-           <div className="row">
+          <div className="row">
             <div className="col-md-4">
               <div className="signin-image"><img src={man}/></div >
             </div>
             <div className="col-md-6">
               <div className="signin-container">
-            <div className="column">
-
-              
+                <input
+                  onChange={(e) => changeInput(e)}
+                  name="username"
+                  placeholder="First name"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <input 
+                  onChange={(e) => changeInput(e)}
+                  name="name"
+                  placeholder="Last Name"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <input
+                  onChange={(e) => changeInput(e)}
+                  name="email"
+                  placeholder="Email id"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <input
+                  onChange={(e) => changeInput(e)}
+                  name="position"
+                  placeholder="Position STUDENT/ALUMINI"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <input
+                  onChange={(e) => changeInput(e)}
+                  name="phone"
+                  placeholder="Phone Number"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <input
+                  onChange={(e) => changeInput(e)}
+                  name="college"
+                  placeholder="College"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <input
+                  onChange={(e) => changeInput(e)}
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <input
+                  onChange={(e) => changeInput(e)}
+                  type="password"
+                  name="confirm_password"
+                  placeholder="Confirm Password"
+                  id="my-input"
+                  aria-describedby="my-helper-text"
+                />
+                <button className="signin-submit-button"  onClick={(e) => handleClick(e)}>Submit</button>
+              </div>
             </div>
-      
-            {/* <h1 >Create {user.username}</h1> */}
-            <input
-              onChange={(e) => changeInput(e)}
-              name="username"
-              placeholder="First name"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <input 
-              onChange={(e) => changeInput(e)}
-              name="name"
-              placeholder="Last Name"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <input
-              onChange={(e) => changeInput(e)}
-              name="email"
-              placeholder="Email id"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <input
-              onChange={(e) => changeInput(e)}
-              name="position"
-              placeholder="Position STUDENT/ALUMINI"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <input
-              onChange={(e) => changeInput(e)}
-              name="phone"
-              placeholder="Phone Number"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <input
-              onChange={(e) => changeInput(e)}
-              name="college"
-              placeholder="College"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <input
-              onChange={(e) => changeInput(e)}
-              type="password"
-              name="password"
-              placeholder="Password"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <input
-              onChange={(e) => changeInput(e)}
-              type="password"
-              name="confirm_password"
-              placeholder="Confirm Password"
-              id="my-input"
-              aria-describedby="my-helper-text"
-            />
-            <button className="signin-submit-button"  onClick={(e) => handleClick(e)}>Submit</button>
           </div>
-         
         </div>
-
       </div>
-    
-    </div>
-
-    </div>
-    </div>
-
-
-  
-    
-   
+    </div> 
   );
 }
 
