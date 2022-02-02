@@ -1,0 +1,16 @@
+.postPostDisplay{
+    color: white;
+    background-color: black;
+    margin: 20px;
+    padding: 15px;
+    width: 300px;
+}
+.postPost{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.postTitle{
+    text-align: center;
+}

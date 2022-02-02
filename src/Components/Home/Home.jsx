@@ -68,6 +68,7 @@ function Home() {
 
       </div>
       
+
       {user.map((value) => displayData(value))}
     </div>
   );
