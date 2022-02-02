@@ -29,33 +29,53 @@ function Login() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   return (
-    <div className="Login">
-      <Navbar />
+    <div className="login-background">
+      <div className="Login">
+      {/* <Navbar /> */}
+
       <div className="container">
-          <h1>Login</h1>
-        <input
-          name="username"
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          type="text"
-        />
-        <input
-          name="password"
-          onChange={(e) => {
-            handleChange(e);
-          }}
-          type="text"
-        />
-        <button
+        <div className="login-heading">
+          <center>Login</center>
+        </div>
+        <div className="login-sub-heading">
+          <center>Please enter your login and password</center>
+        </div>
+        <div className="login-login-id">
+          <center>
+            <input
+            name="username"
+            onChange={(e) => {
+              handleChange(e);
+            }}
+            type="text"
+            placeholder="Enter Login id"/>
+          </center>
+        </div>
+      
+        <div className="login-login-pwd">
+          <center >
+            <input
+              name="password"
+              onChange={(e) => {
+                handleChange(e);
+              }}
+              placeholder="Enter Password"
+              type="text"
+            />
+          </center>
+        </div>     
+        <button className="login-btn"
           onClick={() => {
             loginUser();
-          }}
-        >
-          Submit
+          }}>
+            Submit
         </button>
+       
       </div>
+      </div>
+
     </div>
+   
   );
 }
 

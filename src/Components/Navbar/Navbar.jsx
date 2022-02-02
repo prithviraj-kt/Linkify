@@ -1,5 +1,7 @@
 import React from "react";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+// import logo from './logo.png'
+import "./Navbar.css"
 function Navbar() {
     const navigate = useNavigate()
     const logout = () => {
@@ -48,20 +50,24 @@ function Navbar() {
     }
   return <div>
       <div className="container-fluid">
-          <div className="row">
-              <div className="col-4">
-                  Logo
-              </div>
-              <div className="col-8">
-                  <button onClick={signInRoute}>Signin</button>
-                  <button onClick={logInRoute}>Login</button>
-                  <button onClick={homeRoute}>Home</button>
+         
+             
+                  {/* <img src= {logo} className="navbar-logo"/> */}
+             
+            
+                 <button className="navbar-signin" onClick={signInRoute}>Signin</button>
+                  <button className="navbar-login" onClick={logInRoute}>Login</button>
+                  <button className="navbar-home" onClick={homeRoute}>Home</button>
                   <button onClick={Posts}>Posts</button>
-                  <button onClick={profileRoute}>Profile</button>
+                  <button className="navbar-profile" onClick={profileRoute}>Profile</button>
                   <button onClick={logout}>Logout</button>
                   <button onClick={addPost}>Add Post</button>
-              </div>
-          </div>
+
+         
+                
+                  
+            
+
       </div>
   </div>;
 }
