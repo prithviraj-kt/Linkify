@@ -1,0 +1,55 @@
+.addHeading{
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+}
+.addInput{
+    margin: 30px 0px;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 10px 30px black;
+}
+.addInputFields{
+    /* background-color: red; */
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.addInputTitle{
+    height: 20%;
+}
+.addInputTitle>input{
+    border: 0px;
+    background-color: rgb(225, 249, 255);
+    outline: none;
+    font-size: 30px;
+}
+.addInputDescription{
+    height: 60%;
+}
+.addInputDescription>input{
+    border: 0px;
+    background-color: rgb(225, 249, 255);
+    outline: none;
+}
+.addButton{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addButton>button{
+    width: 200px;
+    border: 0px;
+    padding: 10px 0px;
+    color: white;
+background-color: rgb(0, 162, 255);    border-radius: 10px;
+    font-weight: 500;
+}
+.addButton>button:hover{
+    transition: 0.5s;
+    background-color: blue;
+    color: white;
+}

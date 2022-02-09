@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Post.css";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Nav";
 function Post() {
   const navigate = useNavigate();
   const { username } = useParams();
   const [post, setPost] = useState([]);
-
+  // const [postDes, setPostDes] = useState("");
   useEffect(() => {
+    if (username == "null") {
+      navigate("/login");
+    }
     auth();
   }, []);
 
@@ -22,6 +25,7 @@ function Post() {
       .then((users) => {
         console.log(users.data);
         setPost(users.data);
+        // setPostDes(users.data.description)
       })
       .catch((err) => {
         alert("User does not exist");
@@ -33,26 +37,32 @@ function Post() {
   };
 
   const handleClick = (value) => {
-    navigate(`/profile/${username}/${value.username}`)
-  }
+    navigate(`/profile/${username}/${value.username}`);
+  };
 
   const postDisplay = (value) => {
     return (
-      <div className="postPostDisplay">
-        <p>{value.title}</p>
-        <p>{value.description}</p>
-        <button onClick={() => handleClick(value)}>visit @{value.username}</button>
+      <div className="profilePostDisplay">
+        <p className="profilePostTitle">{value.title}</p>
+        <p className="profilePostdesc">{value.description}</p>
+        <button onClick={() => handleClick(value)}>
+          visit @{value.username}
+        </button>
       </div>
     );
   };
 
   return (
-    <div className="container">
-      <Navbar/>
-      <div className="postTitle">
-        <h1>I am a post page</h1>
+    <div className="container-fluid">
+      <Navbar />
+      <div className="container">
+        <div className="postTitle">
+          <h1>Post page</h1>
+        </div>
+        <div className="profilePostCard">
+          {post.map((value) => postDisplay(value))}
+        </div>
       </div>
-      <div className="postPost">{post.map((value) => postDisplay(value))}</div>
     </div>
   );
 }

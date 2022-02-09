@@ -1,4 +1,4 @@
-.edit-user-submit-btn{
+/* .edit-user-submit-btn{
     appearance: none;
     backface-visibility: hidden;
     background-color: #27ae60;
@@ -34,4 +34,91 @@
       transform: translateY(0);
       transition-duration: .35s;
     }
+ */
+.edit{
+  padding: 20px 0px;
+  /* background-color: red; */
+  width: 100vw;
+  color: gray;
+  text-align: center;
+}
 
+.editSpace{
+  /* background-color: red; */
+  height: 70vh;
+
+
+}
+.editinputs>.row>input{
+  width: 200px;
+}
+.editField{
+  /* background-color: blue; */
+  color: rgb(82, 82, 82);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+.editinputs{
+  /* background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+.editInputField>input{
+  border:0px;
+  border-radius: 10px;
+  height: 40px;
+  outline: none;
+  background-color: rgb(172, 249, 255);
+  padding: 0px 0px 0px 10px;
+  width: 200px;
+  /* background-color: red; */
+  /* font-size: 18px;
+  color: black; */
+
+}
+.editViewTitle{
+  font-weight: 600;
+  font-size: 20px;
+}
+.editViewData{
+  color: black;
+  font-weight: 2500;
+  font-size: 20px;
+  overflow-wrap: break-word;
+}
+.editView{
+  padding: 20px 0px;
+}
+.editButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0px;
+}
+.editButton>button{
+  background-color: rgb(0, 102, 255);
+  border: 0px;
+  border-radius: 10px;
+  width: 130px;
+  height: 30px;
+  color: white;
+  font-weight: 600;
+}
+.viewEdits{
+  background-color: rgb(224, 253, 255);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 20px 30px black;
+
+}
+.editButton>button:hover{
+  background-color: rgb(0, 183, 255);
+  transition: 0.2s;
+  /* color: black; */
+}

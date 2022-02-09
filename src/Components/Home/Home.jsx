@@ -2,16 +2,19 @@ import React, { useState, useEffect } from "react";
 import "./home.css";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Nav";
 
 function Home() {
   const navigate = useNavigate();
   const { username } = useParams();
   const [user, setUser] = useState([]);
 
-  useEffect( () => {
+  useEffect(() => {
+    if (username == "null") {
+      navigate("/login");
+    }
     auth();
-  }, [user]);
+  }, []);
 
   const auth = async () => {
     const userData = await axios.get(
@@ -36,9 +39,9 @@ function Home() {
   };
   const displayData = (e) => {
     return (
-      <div className="DisplayUsehomer">
+      <div className="DisplayUsehomer mapUser">
         <button onClick={() => handleClick(e)}>
-          <p>{e.username}</p>
+          <p>@{e.username}</p>
           <p>{e.email}</p>
           <p>{e.position}</p>
         </button>
@@ -46,30 +49,31 @@ function Home() {
     );
   };
   return (
-    <div className="Home">
+    <div className="Home container-fluid">
       <Navbar />
-
-      <div className="container">
-      <div className="row">
-        <div className="col-md-5">
-          <div className="home-student-list">student
-
+      <div className="row home">
+      <div className="col-sm-6 homeCard">
+          <div className="row home_display">
+            <div className="row homeText">
+              <h3>STUDENTS</h3>
+            </div>
+            {user
+              .filter((u) => u.position == "STUDENT")
+              .map((value) => displayData(value))}
           </div>
         </div>
-        <div className="col-md-5">
-          <div className="home-alumini-list">Alumini
 
+        <div className="col-sm-6 homeCard">
+          <div className="row home_display">
+            <div className="row homeText">
+              <h3>ALUMINIS</h3>
+            </div>
+            {user
+              .filter((u) => u.position == "ALUMINI")
+              .map((value) => displayData(value))}
           </div>
-          
-          
         </div>
-
       </div>
-
-      </div>
-      
-
-      {user.map((value) => displayData(value))}
     </div>
   );
 }

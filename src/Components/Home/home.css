@@ -1,4 +1,4 @@
-.home-student-list{
+/* .home-student-list{
     margin: 50px 0 50px 0;
     background-color: rgba(232, 242, 253, 1);
     border-radius: 5px;
@@ -9,4 +9,52 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: rgba(232, 242, 253, 1);
     border-radius: 5px;
+} */
+
+.home {
+  /* background-color: red; */
+}
+.homeCard {
+  /* background-color: blue; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  padding: 5%;
+}
+.mapUser > button > p {
+}
+
+.home_display {
+  padding: 0px 30px;
+  background-color: rgb(200, 233, 255);
+  box-shadow: 5px 10px 30px #000000;
+  border-radius: 10px;
+
+  /* height: 120%; */
+}
+.mapUser {
+}
+.mapUser > button {
+  width: 100%;
+  margin: 20px 0px;
+  border: 0px;
+  background-color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.mapUser > button:hover {
+  transform: scale(1.05);
+  /* background-color: rgb(0, 162, 255); */
+  /* color: white; */
+}
+.mapUser {
+  overflow-wrap: break-word;
+}
+.homeText {
+  padding: 20px;
+  margin: 10px 0px;
+}
+.homeText > h3 {
+  text-align: center;
 }

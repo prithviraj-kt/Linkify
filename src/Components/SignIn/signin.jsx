@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Nav";
 import axios from "axios";
-import './signin.css';
-import man from './man.jpeg';
-import { Formik } from 'formik';
+import "./signin.css";
+import man from "./man.jpeg";
+import { Formik } from "formik";
 import { useParams, useNavigate } from "react-router-dom";
 
 function Signin() {
   const [user, setUser] = useState("");
- 
+
   const navigate = useNavigate();
 
   const handleClick = async () => {
@@ -18,7 +18,7 @@ function Signin() {
         !user.name ||
         !user.email ||
         !user.phone ||
-        !user.position||
+        !user.position ||
         !user.college ||
         !user.password ||
         !user.confirm_password
@@ -29,7 +29,10 @@ function Signin() {
         //     alert("User already exists...")
         // }else{
 
-        if (user.password === user.confirm_password && ( user.position=="STUDENT"||user.position=="ALUMINI")) {
+        if (
+          user.password === user.confirm_password &&
+          (user.position == "STUDENT" || user.position == "ALUMINI")
+        ) {
           await axios
             .post(`http://localhost:5000/addUser`, user)
             .then(() => {
@@ -45,8 +48,12 @@ function Signin() {
         // }
       }
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
+  };
+
+  const goToSignin = () => {
+    navigate(`/login`);
   };
 
   const changeInput = (e) => {
@@ -54,81 +61,133 @@ function Signin() {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   return (
-    <div className="signin-first-border">
-      <div className="signin-border">
-          <Navbar />
-        <div className="container">
+    <div className="container-fluid">
+      <Navbar />
+      <div className="row signin">
+        <div className="row signIn-sign">
+          <div className="row heyBuddy">
+            <h1>Hey Buddy! Let's Create An Account</h1>
+          </div>
           <div className="row">
-            <div className="col-md-4">
-              <div className="signin-image"><img src={man}/></div >
+            <div className="col-lg-6 signin-image">
+              <img src={man} />
             </div>
-            <div className="col-md-6">
-              <div className="signin-container">
-                <input
-                  onChange={(e) => changeInput(e)}
-                  name="username"
-                  placeholder="First name"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <input 
-                  onChange={(e) => changeInput(e)}
-                  name="name"
-                  placeholder="Last Name"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <input
-                  onChange={(e) => changeInput(e)}
-                  name="email"
-                  placeholder="Email id"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <input
-                  onChange={(e) => changeInput(e)}
-                  name="position"
-                  placeholder="Position STUDENT/ALUMINI"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <input
-                  onChange={(e) => changeInput(e)}
-                  name="phone"
-                  placeholder="Phone Number"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <input
-                  onChange={(e) => changeInput(e)}
-                  name="college"
-                  placeholder="College"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <input
-                  onChange={(e) => changeInput(e)}
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <input
-                  onChange={(e) => changeInput(e)}
-                  type="password"
-                  name="confirm_password"
-                  placeholder="Confirm Password"
-                  id="my-input"
-                  aria-describedby="my-helper-text"
-                />
-                <button className="signin-submit-button"  onClick={(e) => handleClick(e)}>Submit</button>
+            <div className="col-lg-6">
+              <div className="row">
+                <div className="col-sm-6 signin-container">
+                  <div className="signin-input">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      name="username"
+                      placeholder="Username"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                  <div className="signin-input">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      name="name"
+                      placeholder="Name"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                  <div className="signin-input">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      name="email"
+                      placeholder="Email id"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                  <div className="signin-input">
+                    {/* <input
+                      onChange={(e) => changeInput(e)}
+                      name="position"
+                      placeholder="STUDENT/ALUMINI"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    /> */}
+                    <select onChange={(e) => changeInput(e)} name="position">
+                      <option value="STUDENT">Student</option>
+                      <option value="ALLUMINI">Alumini</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="col-sm-6 signin-container">
+                  <div className="signin-input">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      name="phone"
+                      placeholder="Phone Number"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                  <div className="signin-input">
+                    {/* <input
+                      onChange={(e) => changeInput(e)}
+                      name="college"
+                      placeholder="College"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    /> */}
+                    <select onChange={(e) => changeInput(e)} name="college">
+                      <option value="KLE IT College">KLE IT College</option>
+                      <option value="BVB College">KLE TU College</option>
+                      <option value="SDM College">SDM College</option>
+                      <option value="Jain College">Jain College</option>
+                    </select>
+                  </div>
+                  <div className="signin-input">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                  <div className="signin-input">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      type="password"
+                      name="confirm_password"
+                      placeholder="Confirm Password"
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                </div>
+                <div className="row signin-btn">
+                  <div className="row signin-already">
+                    <p>
+                      Already a user? please{" "}
+                      <button onClick={goToSignin}>Login</button>
+                    </p>
+                  </div>
+
+                  <button
+                    className="signin-submit-button"
+                    onClick={(e) => handleClick(e)}
+                  >
+                    Signup
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* <div className="row">
+          
+        </div> */}
       </div>
-    </div> 
+    </div>
   );
 }
 

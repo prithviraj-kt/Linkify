@@ -1,9 +1,8 @@
-*, *:before, *:after{
+/* *, *:before, *:after{
     box-sizing: inherit;
 }
 .login-background{
     background:linear-gradient(to right,rgb(149, 0, 255),rgb(4, 0, 255)) ;
-    /* margin: 80px 30px 0px 30px ; */
     padding: 200px 30px 200px 30px ;
 }
 .login-heading{
@@ -65,4 +64,75 @@
 }
 .login-login-pwd{
     padding: 10px 10px 10px 10px;
+} */
+
+.login-background{
+    height: 100vh;
+
+
+}
+.Login{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.loginContainer{
+    background-image: linear-gradient(to top right, rgb(123, 123, 253), rgb(0, 183, 255));
+    border-radius: 50px;
+    height: 80%;
+    width: 50vw;
+    box-shadow: 10px 20px 30px black;
+    /* background-color: white; */
+}
+.loginHeading{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+}
+.loginHeading{
+    color: white;
+}
+.loginInput{
+    height: 10em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginInput>input{
+    height: 50px;
+    width: 200px;
+    border: 0px;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+    color: gray;
+}
+.login-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.login-btn>button{
+    width: 150px;
+    border: 0px;
+    color: white;
+    border-radius: 10px;
+    height: 30px;
+    font-weight: 500;
+    background-color: blue;
+}
+.login-btn>button:hover{
+    background-color: rgb(0, 225, 255);
+    transition: 0.3s;
+    border-radius: 10px;
+    height: 30px;
+}
+@media screen and (min-width: 1000px){
+    .loginInput>input{
+        width: 300px;
+    }
 }

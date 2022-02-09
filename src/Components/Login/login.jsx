@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Nav";
 import "./login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +20,7 @@ function Login() {
     if (existUser.password === user.password) {
       alert("Login successful");
       localStorage.setItem("username", user.username);
-      navigate(`/home/${user.username}`)
+      navigate(`/home/${user.username}`);
     } else {
       alert("Login failed");
     }
@@ -30,52 +30,52 @@ function Login() {
   };
   return (
     <div className="login-background">
+      <Navbar />
       <div className="Login">
-      {/* <Navbar /> */}
+        <div className="container loginContainer">
+          <div className="row loginHeading">
+            <div className="login-heading">
+              <center>
+                <h1>Login</h1>
+              </center>
+            </div>
+            <div className="login-sub-heading">
+              <center>Enter your right credentials</center>
+            </div>
+          </div>
+          <div className="loginInput">
+            <input
+              name="username"
+              onChange={(e) => {
+                handleChange(e);
+              }}
+              type="text"
+              placeholder="Enter Login id"
+            />
+          </div>
 
-      <div className="container">
-        <div className="login-heading">
-          <center>Login</center>
-        </div>
-        <div className="login-sub-heading">
-          <center>Please enter your login and password</center>
-        </div>
-        <div className="login-login-id">
-          <center>
+          <div className="loginInput">
             <input
-            name="username"
-            onChange={(e) => {
-              handleChange(e);
-            }}
-            type="text"
-            placeholder="Enter Login id"/>
-          </center>
-        </div>
-      
-        <div className="login-login-pwd">
-          <center >
-            <input
+              type="password"
               name="password"
               onChange={(e) => {
                 handleChange(e);
               }}
               placeholder="Enter Password"
-              type="text"
             />
-          </center>
-        </div>     
-        <button className="login-btn"
-          onClick={() => {
-            loginUser();
-          }}>
-            Submit
-        </button>
-       
+          </div>
+          <div className="row login-btn">
+            <button
+              onClick={() => {
+                loginUser();
+              }}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
       </div>
-      </div>
-
     </div>
-   
   );
 }
 

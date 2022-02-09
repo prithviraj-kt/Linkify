@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar/Nav";
 import axios from "axios";
 import "./EditUser.css";
 import { useParams, useNavigate } from "react-router-dom";
@@ -23,10 +23,6 @@ function EditUser() {
     ) {
       alert("Please enter all the fields");
     } else {
-      // if(existUser.username){
-      //     alert("User already exists...")
-      // }else{
-
       if (user.password === user.confirm_password) {
         await axios
           .put(`http://localhost:5000/update/${username}`, user)
@@ -56,51 +52,117 @@ function EditUser() {
     <div>
       <div>
         <Navbar />
-        <div className="container">
-          {/* <h1>hello</h1> */}
-          <h1>Edit {user.username}</h1>
-          <input
-            onChange={(e) => changeInput(e)}
-            name="name"
-            placeholder="Name"
-            value={user.name}
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="email"
-            placeholder="Email"
-            value={user.email}
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="phone"
-            placeholder="Phone"
-            value={user.phone}
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            onChange={(e) => changeInput(e)}
-            name="password"
-            placeholder="Password"
-            value={user.password}
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <input
-            className="edit"
-            onChange={(e) => changeInput(e)}
-            name="confirm_password"
-            placeholder="Confirm password"
-            value={user.confirm_password}
-            id="my-input"
-            aria-describedby="my-helper-text"
-          />
-          <button className="edit-user-submit-btn" onClick={(e) => handleClick(e)}>Submit</button>
+        <div className="container-fluid">
+          <div className="row edit">
+            <h1>Come on, lets update your profile</h1>
+          </div>
+          <div className="container editSpace ">
+            <div className="row ">
+              <div className="col-md-6 editinputs">
+                <div className="row editField">
+                  <div className="col-md-4">Name:</div>
+                  <div className="col-md-8 editInputField">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      name="name"
+                      placeholder="Name"
+                      value={user.name}
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                </div>
+                <div className="row editField">
+                  <div className="col-md-4">Email:</div>
+                  <div className="col-md-8 editInputField">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      name="email"
+                      placeholder="Email"
+                      value={user.email}
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                </div>
+                <div className="row editField">
+                  <div className="col-md-4">Phone:</div>
+                  <div className="col-md-8 editInputField">
+                    <input
+                      onChange={(e) => changeInput(e)}
+                      name="phone"
+                      placeholder="Phone"
+                      value={user.phone}
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                </div>
+                <div className="row editField">
+                  <div className="col-md-4">Password:</div>
+                  <div className="col-md-8 editInputField">
+                    <input
+                      type="password"
+                      onChange={(e) => changeInput(e)}
+                      name="password"
+                      placeholder="Password"
+                      value={user.password}
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                </div>
+                <div className="row editField">
+                  <div className="col-md-4">Confirm Password:</div>
+                  <div className="col-md-8 editInputField">
+                    <input
+                      type="password"
+                      onChange={(e) => changeInput(e)}
+                      name="confirm_password"
+                      placeholder="Confirm password"
+                      value={user.confirm_password}
+                      id="my-input"
+                      aria-describedby="my-helper-text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6 viewEdits">
+                <div className="row editView">
+                  <div className="col-md-4 editViewTitle">Name:</div>
+                  <div className="col-md-8 editViewData">{user.name}</div>
+                </div>
+                <div className="row editView">
+                  <div className="col-md-4 editViewTitle">Email:</div>
+                  <div className="col-md-8 editViewData">{user.email}</div>
+                </div>
+                <div className="row editView">
+                  <div className="col-md-4 editViewTitle">Phone:</div>
+                  <div className="col-md-8 editViewData">{user.phone}</div>
+                </div>
+                <div className="row editView">
+                  <div className="col-md-4 editViewTitle">Password:</div>
+                  <div className="col-md-8 editViewData">{user.password}</div>
+                </div>
+                <div className="row editView">
+                  <div className="col-md-4 editViewTitle">
+                    Confirm Password:
+                  </div>
+                  <div className="col-md-8 editViewData">
+                    {user.confirm_password}
+                  </div>
+                </div>
+              </div>
+              <div className="row editButton">
+                <button
+                  className="edit-user-submit-btn"
+                  onClick={(e) => handleClick(e)}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

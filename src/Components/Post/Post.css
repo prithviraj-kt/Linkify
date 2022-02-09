@@ -1,4 +1,4 @@
-.postPostDisplay{
+/* .postPostDisplay{
     color: white;
     background-color: black;
     margin: 20px;
@@ -10,7 +10,8 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-}
+}*/
 .postTitle{
+    padding: 40px 0px;
     text-align: center;
-}
+} 
