@@ -57,7 +57,7 @@ function Nav() {
       },
       {
         text: "Signup",
-        link: "/signin",
+        link: "/signup",
       },
      
       {

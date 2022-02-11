@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Signin from "./Components/SignIn/Signin";
+import Signup from "./Components/Signup/Signup";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
 import Profile from "./Components/Profile/Profile.jsx";
 import NotFound from "./Components/NotFound/NotFound";
-
 import Post from "./Components/Post/Post";
-
+import EditPost from "./Components/EditPost/Edit"
 import Edit from "./Components/EditUser/EditUser";
 import AddPost from "./Components/AddPost/Post";
 function App() {
@@ -15,8 +14,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/signin" element={<Signin />} />
-          <Route exact path="/" element={<Signin />} />
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/edit/:username/:id" element={<EditPost />} />
+          <Route exact path="/" element={<Signup />} />
           <Route exact path="/addpost/:username" element={<AddPost />} />
           <Route exact path="/post/:username" element={<Post />} />
           <Route exact path="/login" element={<Login />} />

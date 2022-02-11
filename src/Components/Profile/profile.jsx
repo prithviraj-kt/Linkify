@@ -12,7 +12,7 @@ function Profile() {
   const [post, setPost] = useState([]);
   useEffect(() => {
     getUserData();
-  }, []);
+  }, [post]);
 
   async function getUserData() {
     if (username == "null") {
@@ -26,9 +26,12 @@ function Profile() {
     setPost(post.data);
     console.log(post.data);
   }
-
   const handleClick = () => {
     navigate(`/edit/${username}`);
+  };
+  const deletePost = async (e) => {
+    // alert(e.id)
+    await axios.delete(`http://localhost:5000/delete/${username}/${e.id}`);
   };
 
   const displayPost = (e) => {
@@ -36,9 +39,20 @@ function Profile() {
       <div className="profilePostDisplay">
         <p className="profilePostTitle">{e.title}</p>
         <p className="profilePostdesc">{e.description}</p>
+        {visitedUser == username ? (
+          <button onClick={() => deletePost(e)}>Delete</button>
+        ) : (
+          ""
+        )}
       </div>
     );
   };
+
+  const deleteUser = async () => {
+    await axios.delete(`http://localhost:5000/delete/${username}`);
+    navigate("/login")
+  }
+
 
   const logout = () => {
     localStorage.clear();
@@ -82,7 +96,10 @@ function Profile() {
                     >
                       Edit
                     </button>
-                    <button onClick={logout} className="profileLogout">Logout</button>
+                    <button onClick={logout} className="profileLogout">
+                      Logout
+                    </button>
+                  <button className="profileLogout" onClick={deleteUser} >Delete account</button>
                   </div>
                 ) : (
                   ""

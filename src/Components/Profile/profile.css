@@ -5,7 +5,6 @@
     width: 200px;
     height: 200px;
 } */
-
 .profilePostDisplay {
   color: rgb(0, 137, 161);
   background-color: rgb(180, 237, 255);
@@ -15,6 +14,7 @@
   height: 150px;
   border-radius: 20px;
   transition: 0.5s;
+  overflow-wrap: break-word;
 }
 .profilePostDisplay:hover {
   transform: scale(1.1);
