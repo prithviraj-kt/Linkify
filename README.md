@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Student & Alumni Connection Website - Frontend (Backend seperate repo)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A college-specific **Student and Alumni Connection** platform built with **React** (frontend), **Node.js** (backend), **MySQL** database, and **Prisma** ORM. The website facilitates connections between current students and alumni of the same college by allowing them to view posts, profiles, and details of peers and alumni.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **User Registration & Login:** Separate roles for students and alumni with secure authentication
+- **College-Specific Networking:** Users can connect only with others from the same college
+- **Profile Management:** Users can create and update their profiles with personal and academic details
+- **Posts & Updates:** Students and alumni can create posts, view posts from their college community
+- **Search & View:** Search and view profiles and posts of students and alumni from the same college
+- **Responsive UI:** Friendly and accessible UI built with React for seamless desktop and mobile experience
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend:** React.js, React Router, Axios (or fetch)
+- **Backend:** Node.js, Express.js
+- **Database:** MySQL
+- **ORM:** Prisma for database schema management and querying
+- **Authentication:** JWT or session-based auth
+- **Styling:** CSS or CSS-in-JS (your choice)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Installation & Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (>= 16.x)
+- MySQL server installed and running
+- npm or yarn
+- Prisma CLI installed globally or locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend Setup
 
-### `npm run eject`
+1. Clone the repository and navigate to backend:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Configure your `.env` file with your MySQL connection string:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Generate Prisma client and run migrations:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Start the backend server:
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Navigate to frontend directory:
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+2. Open `http://localhost:3000` in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Register as a student or alumni with your college details.
+- Complete your profile to let others know more about you.
+- Post updates and announcements relevant to your college community.
+- Search and connect with fellow students and alumni from your college.
+- View posts and profiles filtered by your college.
+
+---
+
+## Folder Structure
+
+
+
+---
+
+
+
+## Contributing
+
+Contributions are welcome! Feel free to fork, create branches, and submit pull requests for new features or bug fixes.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Built to strengthen college community bonds by connecting current students and alumni through an intuitive and secure online platform.
